@@ -1,0 +1,11 @@
+{
+  "name": "voting-app-frontend",
+  "version": "1.0.0",
+  "description": "This is a the frontend of a voting app for a FreeCodeCamp project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xz64",
+  "license": "ISC"
+}
