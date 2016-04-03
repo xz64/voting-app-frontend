@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require('path');
@@ -11,6 +12,9 @@ var htmlMinificationConfig = isProduction ?
   } :
   {};
 
+var minifyJSPlugin = isProduction ? new webpack.optimize.UglifyJsPlugin({}) :
+  Function.prototype;
+
 var config = {
   entry: path.join(__dirname, 'index.js'),
   output: {
@@ -22,7 +26,8 @@ var config = {
       title: 'Voting App',
       minify: htmlMinificationConfig
     }),
-    new CleanWebpackPlugin([buildDir])
+    new CleanWebpackPlugin([buildDir]),
+    minifyJSPlugin
   ]
 };
 
