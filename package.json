@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server --content-base dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "xz64",
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^2.15.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }
