@@ -5,6 +5,12 @@ var path = require('path');
 var buildDir = 'dist';
 var isProduction = process.env.NODE_ENV === 'production';
 
+var htmlMinificationConfig = isProduction ?
+  {
+    collapseWhitespace: true
+  } :
+  {};
+
 var config = {
   entry: path.join(__dirname, 'index.js'),
   output: {
@@ -14,9 +20,7 @@ var config = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Voting App',
-      minify: {
-        collapseWhitespace: true
-      }
+      minify: htmlMinificationConfig
     }),
     new CleanWebpackPlugin([buildDir])
   ]
