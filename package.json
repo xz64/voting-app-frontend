@@ -4,8 +4,13 @@
   "description": "This is a the frontend of a voting app for a FreeCodeCamp project.",
   "main": "index.js",
   "scripts": {
+    "webpack": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "xz64",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.15.0",
+    "webpack": "^1.12.14"
+  }
 }
