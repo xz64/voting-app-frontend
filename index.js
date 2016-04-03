@@ -1,6 +1,10 @@
-module.exports = {
+/*global window*/
+
+window.app = app;
+
+var app = {
   init: function init() {
   }
 };
 
-module.exports.init();
+app.init();
