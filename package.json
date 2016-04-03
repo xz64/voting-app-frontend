@@ -11,6 +11,7 @@
   "author": "xz64",
   "license": "ISC",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.8",
     "html-webpack-plugin": "^2.15.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
