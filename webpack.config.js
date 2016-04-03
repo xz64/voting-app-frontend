@@ -28,7 +28,15 @@ var config = {
     }),
     new CleanWebpackPlugin([buildDir]),
     minifyJSPlugin
-  ]
+  ],
+  module: {
+    loaders: [
+      {test: /\.js$/, loaders: ['babel'], exclude: /node_modules/}
+    ]
+  },
+  eslint: {
+    configFile: path.join(__dirname, '.eslintrc.json')
+  }
 };
 
 module.exports = config;
