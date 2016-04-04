@@ -1,0 +1,6 @@
+{
+  "extends": ["strict"],
+  "globals": {
+    "window": false
+  }
+}
