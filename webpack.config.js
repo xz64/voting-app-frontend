@@ -12,6 +12,8 @@ var htmlMinificationConfig = isProduction ?
   } :
   {};
 
+var devtools = isProduction ? '' : 'source-map';
+
 var minifyJSPlugin = isProduction ? new webpack.optimize.UglifyJsPlugin({}) :
   Function.prototype;
 
@@ -36,7 +38,8 @@ var config = {
   },
   eslint: {
     configFile: path.join(__dirname, '.eslintrc.json')
-  }
+  },
+  devtool: devtools
 };
 
 module.exports = config;
