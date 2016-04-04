@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
 var buildDir = 'dist';
@@ -29,11 +30,14 @@ var config = {
       minify: htmlMinificationConfig
     }),
     new CleanWebpackPlugin([buildDir]),
-    minifyJSPlugin
+    minifyJSPlugin,
+    new ExtractTextPlugin('styles.css')
   ],
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['babel', 'eslint'], exclude: /node_modules/}
+      {test: /\.js$/, loaders: ['babel', 'eslint'], exclude: /node_modules/},
+      {test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader',
+        'css-loader', 'sass-loader'), exclude: /node_modules/}
     ]
   },
   eslint: {
