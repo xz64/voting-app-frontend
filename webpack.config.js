@@ -35,13 +35,10 @@ var config = {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['babel', 'eslint'], exclude: /node_modules/},
+      {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader',
         'css-loader', 'sass-loader'), exclude: /node_modules/}
     ]
-  },
-  eslint: {
-    configFile: path.join(__dirname, '.eslintrc.json')
   },
   devtool: devtools
 };
