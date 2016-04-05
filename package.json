@@ -7,6 +7,7 @@
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --content-base dist/",
     "eslint": "eslint index.js client",
+    "sass-lint": "sass-lint -f tap -q -v",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "xz64",
@@ -22,8 +23,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.15.0",
     "node-sass": "^3.4.2",
+    "sass-lint": "^1.5.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
+    "tap-spec": "^4.1.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
