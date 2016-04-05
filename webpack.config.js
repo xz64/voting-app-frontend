@@ -4,6 +4,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
+var srcDir = 'client';
 var buildDir = 'dist';
 var isProduction = process.env.NODE_ENV === 'production';
 
@@ -19,7 +20,7 @@ var minifyJSPlugin = isProduction ? new webpack.optimize.UglifyJsPlugin({}) :
   Function.prototype;
 
 var config = {
-  entry: path.join(__dirname, 'index.js'),
+  entry: path.join(__dirname, srcDir, 'index.js'),
   output: {
     path: buildDir,
     filename: 'app.js'

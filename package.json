@@ -2,7 +2,7 @@
   "name": "voting-app-frontend",
   "version": "1.0.0",
   "description": "This is a the frontend of a voting app for a FreeCodeCamp project.",
-  "main": "index.js",
+  "main": "client/index.js",
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --content-base dist/",
