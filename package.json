@@ -6,7 +6,7 @@
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --content-base dist/",
-    "eslint": "eslint index.js client",
+    "eslint": "eslint client",
     "sass-lint": "sass-lint -f tap -q -v",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
