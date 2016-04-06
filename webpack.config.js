@@ -37,6 +37,7 @@ var config = {
   module: {
     loaders: [
       {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
+      {test: /\.jade$/, loader: 'jade', exclude: /node_modules/},
       {test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader',
         'css-loader', 'sass-loader'), exclude: /node_modules/}
     ]
