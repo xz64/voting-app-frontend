@@ -1,6 +1,6 @@
 {
   "extends": ["strict"],
-  "globals": {
-    "window": false
+  "env": {
+    "browser": true
   }
 }
