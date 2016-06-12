@@ -14,5 +14,15 @@
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      80
+    ],
+    "indent": [
+      "error",
+      2
+    ]
   }
 }

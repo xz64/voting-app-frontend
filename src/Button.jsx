@@ -5,8 +5,16 @@ import styles from './button.css';
 
 const Button = ({ t, item, onClick }) => (
   <div>
-    <button type='button' styleName='button' onClick={onClick}>{t('click')}{item}</button>
+    <button type='button' styleName='button' onClick={onClick}>
+      {t('click')}{item}
+    </button>
   </div>
 );
+
+Button.propTypes = {
+  t: React.PropTypes.func.isRequired,
+  onClick: React.PropTypes.func.isRequired,
+  item: React.PropTypes.number.isRequired
+};
 
 export default translate()(CSSModules(Button, styles));

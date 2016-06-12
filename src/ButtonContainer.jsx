@@ -4,7 +4,7 @@ import Button from './Button.jsx';
 
 const mapStateToProps = (state) => {
   return {
-    item: state.a
+    item: state.mainReducer.a
   };
 };
 
