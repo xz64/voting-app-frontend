@@ -53,6 +53,7 @@ let config = {
     loaders: [
       {test: /\.jsx?$/, loaders: ['react-hot', 'babel'],
         exclude: /node_modules/},
+      {test: /\.json/, loader: 'json', exclude: /node_modules/},
       {test: /\.css/, loader: ExtractTextPlugin.extract('style-loader',
         'css-loader'), exclude: /node_modules/}
     ]

@@ -1,13 +1,15 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
 class App extends React.Component {
   render() {
+    let { t } = this.props;
     return (
       <div>
-        This is the voting app.
+        {t('greeting')}. This is the voting app.
       </div>
     );
   }
 }
 
-export default App;
+export default translate()(App);
