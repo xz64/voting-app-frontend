@@ -1,3 +1,4 @@
+/*eslint-env node */
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -46,16 +47,25 @@ let config = {
     }),
     new CleanWebpackPlugin([buildDir]),
     minifyJSPlugin,
-    new ExtractTextPlugin('styles.css'),
-    new webpack.HotModuleReplacementPlugin()
+    new ExtractTextPlugin('styles.css', { allChunks: true }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Tether: 'tether',
+      'window.Tether': 'tether'
+    })
   ],
   module: {
     loaders: [
       {test: /\.jsx?$/, loaders: ['react-hot', 'babel'],
         exclude: /node_modules/},
-      {test: /\.json/, loader: 'json', exclude: /node_modules/},
-      {test: /\.css/, loader: ExtractTextPlugin.extract('style-loader',
-        'css-loader'), exclude: /node_modules/}
+      {test: /\.json$/, loader: 'json', exclude: /node_modules/},
+      {test: /\.css$/, loaders: ['style?sourceMap', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'],
+        exclude: /node_modules\/(?!bootstrap)/}
+      //{test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader',
+      //  'css-loader'), exclude: /node_modules/}
     ]
   },
   devtool: devtools

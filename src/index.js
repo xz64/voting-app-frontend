@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { I18nextProvider } from 'react-i18next';
+import 'bootstrap';
 
 import App from './App.jsx';
 import i18n from './i18n.js';

@@ -1,0 +1,3 @@
+.button {
+  composes: btn from 'bootstrap/dist/css/bootstrap.css' btn-primary from 'bootstrap/dist/css/bootstrap.css';
+}
