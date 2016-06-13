@@ -6,6 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 
 import i18n from './i18n.js';
