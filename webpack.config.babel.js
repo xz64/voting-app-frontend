@@ -44,14 +44,7 @@ let config = {
     new CleanWebpackPlugin([buildDir]),
     minifyJSPlugin,
     new ExtractTextPlugin('styles.css', { allChunks: true }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Tether: 'tether',
-      'window.Tether': 'tether'
-    })
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     loaders: [
@@ -60,7 +53,7 @@ let config = {
       {test: /\.json$/, loader: 'json', exclude: /node_modules/},
       {test: /\.css$/, loaders: ['style?sourceMap',
         'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___'
-        + '[hash:base64:5]'], exclude: /node_modules\/(?!bootstrap)/}
+        + '[hash:base64:5]'], exclude: /node_modules\/(?!blaze)/}
     ]
   },
   devtool: devtools
