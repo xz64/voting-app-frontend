@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import LoginForm from './LoginForm.jsx';
+import LoginForm from '../LoginForm.jsx';
 
 const handleSubmit = (data) => {
   Function.prototype(data);

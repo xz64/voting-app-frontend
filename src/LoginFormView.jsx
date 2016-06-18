@@ -1,8 +1,14 @@
 import React from 'react';
 
-const LoginFormView = ({ fields: { input1 } , handleSubmit, submitting }) => (
+import InputText from './components/forms/InputText.jsx';
+
+const LoginFormView = ({ fields: { email, password } , handleSubmit,
+  submitting }) => (
   <form onSubmit={handleSubmit}>
-    <input type="text" {...input1}/>
+    <InputText formField={email} placeholder='Your email address' 
+      forAttr='email' labelText='Email Address' type='text'/>
+    <InputText formField={password} placeholder='*******' 
+      forAttr='password' labelText='Password' type='password'/>
     <button type="submit" disabled={submitting}>
       {submitting ? 'Please wait...' : 'Submit'}
     </button>

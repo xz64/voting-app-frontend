@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './App.jsx';
-import Home from './Home.jsx';
-import About from './About.jsx';
+import Home from './routes/Home.jsx';
+import About from './routes/About.jsx';
 
 export default (
   <Route path='/' component={App}>
