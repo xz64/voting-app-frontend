@@ -1,0 +1,3 @@
+.button {
+  composes: c-button from 'blaze/dist/components.buttons.css'; 
+}

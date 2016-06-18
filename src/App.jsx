@@ -1,11 +1,14 @@
 import React from 'react';
 import { translate } from 'react-i18next';
+import 'bootstrap';
+import styles from './App.css';
+import CSSModules from 'react-css-modules';
 
 class App extends React.Component {
   render() {
     let { t } = this.props;
     return (
-      <div>
+      <div styleName='main'>
         {t('greeting')}. This is the voting app.
         {this.props.children}
       </div>
@@ -18,4 +21,4 @@ App.propTypes = {
   children: React.PropTypes.node
 };
 
-export default translate()(App);
+export default translate()(CSSModules(App, styles));
