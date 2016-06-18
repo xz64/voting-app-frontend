@@ -1,5 +1,4 @@
 import React from 'react';
-import { translate } from 'react-i18next';
 import styles from './App.css';
 import CSSModules from 'react-css-modules';
 
@@ -8,14 +7,13 @@ import NavItem from './components/navigation/NavItem.jsx';
 
 class App extends React.Component {
   render() {
-    let { t } = this.props;
     return (
       <div styleName='main'>
         <NavBar>
           <NavItem label='Home' path='/'/>
           <NavItem label='About' path='about'/>
+          <NavItem label='Login' path='login'/>
         </NavBar>
-        {t('greeting')}. This is the voting app.
         {this.props.children}
       </div>
     );
@@ -27,4 +25,4 @@ App.propTypes = {
   children: React.PropTypes.node
 };
 
-export default translate()(CSSModules(App, styles));
+export default CSSModules(App, styles);

@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonContainer from '../ButtonContainer.jsx';
+import ButtonContainer from '../components/forms/ButtonContainer.jsx';
 import { Link } from 'react-router';
 
 const Home = () => (

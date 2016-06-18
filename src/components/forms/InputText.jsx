@@ -5,7 +5,7 @@ import styles from './InputText.css';
 
 const InputText = (props) => (
   <div styleName='formelement'>
-    <label styleName='label' for={props.forAttr}>{props.labelText}</label>
+    <label styleName='label' htmlFor={props.forAttr}>{props.labelText}</label>
     <input type={props.type || 'text'}
       styleName={props.styleName || 'inputtext'} {...props.formField}
       placeholder={props.placeholder || ''}/>

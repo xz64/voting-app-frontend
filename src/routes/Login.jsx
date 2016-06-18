@@ -1,6 +1,6 @@
 import { reduxForm } from 'redux-form';
 
-import LoginFormView from './LoginFormView.jsx';
+import LoginFormView from '../components/forms/LoginFormView.jsx';
 
 const LoginForm = reduxForm({
   form: 'login',

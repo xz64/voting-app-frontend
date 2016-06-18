@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InputText from './components/forms/InputText.jsx';
+import InputText from './InputText.jsx';
 
 const LoginFormView = ({ fields: { email, password } , handleSubmit,
   submitting }) => (
