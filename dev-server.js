@@ -8,7 +8,7 @@ var config = require('./webpack.config.babel.js').default;
 var host = process.env.HOST || 'localhost';
 var port = process.env.PORT || 8080;
 
-var server =new WebpackDevServer(webpack(config), {
+var server = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true
