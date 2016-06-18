@@ -1,6 +1,5 @@
 .formelement {
   composes: c-form-element from 'blaze/dist/components.inputs.css';
-  max-width: 300px;
 }
 
 .label {

@@ -1,15 +1,17 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 
 import InputText from './InputText.jsx';
+import styles from './LoginFormView.css';
 
 const LoginFormView = ({ fields: { email, password } , handleSubmit,
   submitting }) => (
-  <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit} styleName='loginform'>
     <InputText formField={email} placeholder='Your email address' 
       forAttr='email' labelText='Email Address' type='text'/>
     <InputText formField={password} placeholder='*******' 
       forAttr='password' labelText='Password' type='password'/>
-    <button type="submit" disabled={submitting}>
+    <button styleName='submitbutton' type="submit" disabled={submitting}>
       {submitting ? 'Please wait...' : 'Submit'}
     </button>
   </form>    
@@ -21,4 +23,4 @@ LoginFormView.propTypes = {
   submitting: React.PropTypes.bool.isRequired
 }
 
-export default LoginFormView;
+export default CSSModules(LoginFormView, styles);

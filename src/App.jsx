@@ -21,7 +21,6 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  t: React.PropTypes.func.isRequired,
   children: React.PropTypes.node
 };
 
