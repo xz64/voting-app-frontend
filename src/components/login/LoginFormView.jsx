@@ -6,13 +6,13 @@ import styles from './LoginFormView.css';
 
 const LoginFormView = ({ fields: { email, password } , handleSubmit,
   submitting }) => (
-  <form onSubmit={handleSubmit} styleName='loginform'>
+  <form onSubmit={handleSubmit}>
     <InputText formField={email} placeholder='Your email address' 
       forAttr='email' labelText='Email Address' type='text'/>
     <InputText formField={password} placeholder='*******' 
       forAttr='password' labelText='Password' type='password'/>
     <button styleName='submitbutton' type="submit" disabled={submitting}>
-      {submitting ? 'Please wait...' : 'Submit'}
+      {submitting ? 'Please wait...' : 'Login'}
     </button>
   </form>    
 );

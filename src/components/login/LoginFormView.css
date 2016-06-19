@@ -1,7 +1,3 @@
-.loginform {
-  max-width: 300px;
-}
-
 .submitbutton {
   composes: c-button from 'blaze/dist/components.buttons.css';
   composes: c-button--block from 'blaze/dist/components.buttons.css';
