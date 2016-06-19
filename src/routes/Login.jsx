@@ -1,10 +1,9 @@
-import { reduxForm } from 'redux-form';
+import React from 'react';
 
-import LoginFormView from '../components/forms/LoginFormView.jsx';
+import LoginContainer from '../components/login/LoginContainer.jsx';
 
-const LoginForm = reduxForm({
-  form: 'login',
-  fields: ['email', 'password']
-})(LoginFormView);
+const Login = () => (
+  <LoginContainer/>
+);
 
-export default LoginForm;
+export default Login;

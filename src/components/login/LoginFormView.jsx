@@ -1,7 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import InputText from './InputText.jsx';
+import InputText from '../forms/InputText.jsx';
 import styles from './LoginFormView.css';
 
 const LoginFormView = ({ fields: { email, password } , handleSubmit,
