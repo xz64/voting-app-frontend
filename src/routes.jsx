@@ -1,15 +1,24 @@
-import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+const Component = {
+  path: '/',
+  getComponent: function(nextState, callback) {
+    require.ensure(['./App.jsx'], function(require) {
+      callback(null, require('./App.jsx').default);
+    });
+  },
+  getIndexRoute: function(location, callback) {
+    require.ensure(['./routes/Home.jsx'], function(require) {
+      callback(null, require('./routes/Home.jsx').default);
+    });
+  },
+  getChildRoutes: function(location, callback) {
+    require.ensure(['./routes/About.jsx', './routes/Login.jsx'],
+      function(require) {
+      callback(null, [
+        require('./routes/About.jsx').default,
+        require('./routes/Login.jsx').default
+      ]);
+    });
+  }
+};
 
-import App from './App.jsx';
-import Home from './routes/Home.jsx';
-import About from './routes/About.jsx';
-import Login from './routes/Login.jsx';
-
-export default (
-  <Route path='/' component={App}>
-    <IndexRoute component={Home}/>
-    <Route path='about' component={About}/>
-    <Route path='login' component={Login}/>
-  </Route>
-);
+export default Component;

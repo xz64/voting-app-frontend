@@ -1,17 +1,15 @@
-import React from 'react';
-import CSSModules from 'react-css-modules';
+import { hideLoading } from 'react-redux-loading-bar'
+import store from '../store.js';
 
-import LoginContainer from '../components/login/LoginContainer.jsx';
-import styles from './Login.css';
+const Component = {
+  path: 'login',
+  getComponent(nextState, cb) {
+    require.ensure(['../components/routes/Login.jsx'], (require) => {
+      var component = require('../components/routes/Login.jsx').default;
+      store.dispatch(hideLoading());
+      cb(null, component);
+    });
+  }
+};
 
-const Login = () => (
-  <div styleName='login'>
-    <div styleName='centerblock'>
-      <div styleName='centerblock_content'>
-        <LoginContainer/>
-      </div>
-    </div>
-  </div>
-);
-
-export default CSSModules(Login, styles);
+export default Component;

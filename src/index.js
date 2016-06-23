@@ -3,25 +3,19 @@ import { render } from 'react-dom';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
-import { createStore, combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { showLoading } from 'react-redux-loading-bar';
 import 'blaze/dist/generic.global.css';
 
 import i18n from './i18n.js';
-import mainReducer from './reducers/mainReducer.js';
 import routes from './routes.jsx';
-
-const reducer = combineReducers({
-  mainReducer,
-  routing: routerReducer,
-  form: formReducer
-});
-
-const store = createStore(reducer, undefined,
-  window.devToolsExtension && window.devToolsExtension());
+import store from './store.js';
 
 const history = syncHistoryWithStore(browserHistory, store);
+
+history.listen(() => {
+  store.dispatch(showLoading());
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   render(

@@ -3,7 +3,8 @@
     "react"
   ],
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -21,7 +22,7 @@
       80
     ],
     "indent": [
-      "error",
+      "warn",
       2
     ]
   }

@@ -34,6 +34,7 @@
     "react-i18next": "^1.4.2",
     "react-lite": "^0.15.14",
     "react-redux": "^4.4.5",
+    "react-redux-loading-bar": "^2.0.2",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",

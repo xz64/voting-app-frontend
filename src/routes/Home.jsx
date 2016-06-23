@@ -1,13 +1,14 @@
-import React from 'react';
-import ButtonContainer from '../components/forms/ButtonContainer.jsx';
-import { Link } from 'react-router';
+import { hideLoading } from 'react-redux-loading-bar'
+import store from '../store.js';
 
-const Home = () => (
-  <div>
-    Welcome to Home!
-    <ButtonContainer/>
-    Click <Link to='/about'>here</Link> to learn more!
-  </div>
-);
+const Component = {
+  getComponent(nextState, cb) {
+    require.ensure(['../components/routes/Home.jsx'], (require) => {
+      var component = require('../components/routes/Home.jsx').default;
+      store.dispatch(hideLoading());
+      cb(null, component);
+    });
+  }
+};
 
-export default Home;
+export default Component;

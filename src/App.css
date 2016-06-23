@@ -1,3 +1,7 @@
 .main {
   composes: c-text from 'blaze/dist/components.typography.css';
 }
+
+.loading {
+  background-color: #6ebaf7 !important;
+}

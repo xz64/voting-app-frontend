@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './App.css';
 import CSSModules from 'react-css-modules';
+import LoadingBar from 'react-redux-loading-bar';
 
+import styles from './App.css';
 import NavBar from './components/navigation/NavBar.jsx';
 import NavItem from './components/navigation/NavItem.jsx';
 
@@ -14,6 +15,7 @@ class App extends React.Component {
           <NavItem label='About' path='about'/>
           <NavItem label='Login' path='login'/>
         </NavBar>
+        <LoadingBar styleName='loading'/>
         {this.props.children}
       </div>
     );
