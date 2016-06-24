@@ -15,7 +15,8 @@ const Component = {
       function(require) {
       callback(null, [
         require('./routes/About.jsx').default,
-        require('./routes/Login.jsx').default
+        require('./routes/Login.jsx').default,
+        require('./routes/Register.jsx').default
       ]);
     });
   }

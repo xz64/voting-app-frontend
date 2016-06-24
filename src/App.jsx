@@ -16,7 +16,11 @@ class App extends React.Component {
           <NavItem label='Login' path='login'/>
         </NavBar>
         <LoadingBar styleName='loading'/>
-        {this.props.children}
+        <div styleName='center-block'>
+          <div styleName='center-horizontal'>
+            {this.props.children}
+          </div>
+        </div>
       </div>
     );
   }

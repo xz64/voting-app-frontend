@@ -5,3 +5,14 @@
 .loading {
   background-color: #6ebaf7 !important;
 }
+
+.center-block {
+  composes: u-center-block from 'blaze/dist/utilities.alignment.css';
+}
+
+.center-horizontal {
+  composes: u-center-block__content from 'blaze/dist/utilities.alignment.css';
+  composes: u-center-block__content--horizontal from
+    'blaze/dist/utilities.alignment.css';
+  width: 400px;
+}
