@@ -13,7 +13,14 @@ const reducer = combineReducers({
   form: formReducer
 });
 
-const store = createStore(reducer, undefined,
-  window.devToolsExtension && window.devToolsExtension());
+let store;
+
+if(process.env.NODE_ENV === 'production') {
+  store = createStore(reducer);
+}
+else {
+  store = createStore(reducer, undefined,
+    window.devToolsExtension && window.devToolsExtension());
+}
 
 export default store;

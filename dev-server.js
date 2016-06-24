@@ -4,7 +4,7 @@ require('babel-register');
 
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config.babel.js').default;
+var config = require('./webpack.development.config.babel.js').default;
 var host = process.env.HOST || 'localhost';
 var port = process.env.PORT || 8080;
 
