@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { showLoading } from 'react-redux-loading-bar';
-import 'blaze/dist/generic.global.css';
+import 'blaze/dist/generic.global.min.css';
 
 import i18n from './i18n.js';
 import routes from './routes.jsx';

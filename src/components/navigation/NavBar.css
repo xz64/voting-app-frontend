@@ -1,4 +1,4 @@
 .navbar {
-  composes: c-nav from 'blaze/dist/components.navs.css';
-  composes: c-nav--inline from 'blaze/dist/components.navs.css';
+  composes: c-nav from 'blaze/dist/components.navs.min.css';
+  composes: c-nav--inline from 'blaze/dist/components.navs.min.css';
 }

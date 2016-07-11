@@ -3,5 +3,5 @@
 }
 
 .navitem {
-  composes: c-nav__item from 'blaze/dist/components.navs.css';
+  composes: c-nav__item from 'blaze/dist/components.navs.min.css';
 }

@@ -1,5 +1,5 @@
 .main {
-  composes: c-text from 'blaze/dist/components.typography.css';
+  composes: c-text from 'blaze/dist/components.typography.min.css';
 }
 
 .loading {
@@ -7,12 +7,13 @@
 }
 
 .center-block {
-  composes: u-center-block from 'blaze/dist/utilities.alignment.css';
+  composes: u-center-block from 'blaze/dist/utilities.alignment.min.css';
 }
 
 .center-horizontal {
-  composes: u-center-block__content from 'blaze/dist/utilities.alignment.css';
+  composes: u-center-block__content from
+    'blaze/dist/utilities.alignment.min.css';
   composes: u-center-block__content--horizontal from
-    'blaze/dist/utilities.alignment.css';
+    'blaze/dist/utilities.alignment.min.css';
   width: 400px;
 }
