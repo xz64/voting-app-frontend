@@ -1,7 +1,5 @@
 /*eslint-env node */
 import webpack from 'webpack';
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 import baseConfig from './webpack.base.config.babel.js';

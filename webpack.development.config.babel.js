@@ -8,7 +8,7 @@ let config = Object.assign({}, baseConfig);
 
 config.entry = [
   'webpack-dev-server/client?' + devServerUrl,
-  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+  'webpack/hot/only-dev-server' // "only" prevents reload on syntax errors
 ].concat(config.entry);
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());

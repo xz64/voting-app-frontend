@@ -1,5 +1,4 @@
 /*eslint-env node */
-import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
@@ -30,7 +29,7 @@ let config = {
         'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___'
         + '[hash:base64:5]'], exclude: /node_modules\/(?!blaze)/}
     ]
-  },
+  }
 };
 
 export default config;
