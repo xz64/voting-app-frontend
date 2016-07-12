@@ -13,8 +13,6 @@ config.entry = [
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-config.module.loaders[0].loaders.unshift('react-hot');
-
 config.devtool = 'source-map';
 
 export default config;

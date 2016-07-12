@@ -22,7 +22,7 @@ const LoginFormView = ({ fields: { email, password } , handleSubmit,
 );
 
 LoginFormView.propTypes = {
-  fields: React.PropTypes.object.isRequired,
+  fields: React.PropTypes.array.isRequired,
   handleSubmit: React.PropTypes.func.isRequired,
   submitting: React.PropTypes.bool.isRequired
 }
