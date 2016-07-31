@@ -21,6 +21,10 @@
       "error",
       80
     ],
+    "semi": [
+      "error",
+      "always"
+    ],
     "indent": [
       "warn",
       2

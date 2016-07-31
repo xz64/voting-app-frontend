@@ -1,4 +1,4 @@
-import { hideLoading } from 'react-redux-loading-bar'
+import { hideLoading } from 'react-redux-loading-bar';
 import store from '../store.js';
 
 const Component = {

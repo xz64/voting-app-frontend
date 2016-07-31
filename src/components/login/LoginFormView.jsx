@@ -25,6 +25,6 @@ LoginFormView.propTypes = {
   fields: React.PropTypes.array.isRequired,
   handleSubmit: React.PropTypes.func.isRequired,
   submitting: React.PropTypes.bool.isRequired
-}
+};
 
 export default CSSModules(LoginFormView, styles);
