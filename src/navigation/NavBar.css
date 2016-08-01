@@ -1,4 +1,48 @@
 .navbar {
-  composes: c-nav from 'blaze/dist/components.navs.min.css';
-  composes: c-nav--inline from 'blaze/dist/components.navs.min.css';
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%;
+}
+
+.navlink, .navlink:active, .navlink:focus, .navlink:visited {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0 1rem;
+  height: 3rem;
+  line-height: 3rem;
+  border: 0;
+  background-color: black;
+}
+
+.navlink:hover {
+  background-color: gray;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navbar-spacer {
+  margin-bottom: 3rem;
+}
+
+.hamburger {
+  composes: navlink;
+  font-size: 1.5rem;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger:focus, .hamburger:active {
+  border: 0;
+  outline: 0;
 }

@@ -1,8 +1,0 @@
-.link, .link:active, .link:focus {
-  outline: none;
-}
-
-.navitem {
-  composes: c-nav__item from 'blaze/dist/components.navs.min.css';
-  color: white;
-}

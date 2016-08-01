@@ -1,18 +1,18 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Link } from 'react-router';
 
 import CSSModules from 'react-css-modules';
 import styles from './NavBar.css';
 
-const NavBar = (props) => (
-  <nav>
-    <ul styleName='navbar'>
-      {props.children}
-    </ul>
-  </nav>
+const NavBar = () => (
+  <div role="presentation" styleName="navbar-spacer">
+    <nav styleName='navbar'>
+      <Link styleName='navlink' to='/'>Home</Link>
+      <Link styleName='navlink' to='about'>About</Link>
+      <div role="presentation" styleName="spacer"/>
+      <button type="button" styleName='hamburger'>&#x2261;</button>
+    </nav>
+  </div>
 );
-
-NavBar.propTypes = {
-  children: PropTypes.node
-};
 
 export default CSSModules(NavBar, styles);
