@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+import CSSModules from 'react-css-modules';
 
-import ButtonContainer from '../forms/ButtonContainer.jsx';
+import styles from './HomeScreen.css';
 
 const HomeScreen = () => (
   <div>
-    Welcome to HomeScreen!
-    <ButtonContainer/>
-    Click <Link to='/about'>here</Link> to learn more!
+    <h1 styleName="center">Welcome to the Voting App!</h1>
   </div>
 );
 
-export default HomeScreen;
+export default CSSModules(HomeScreen, styles);

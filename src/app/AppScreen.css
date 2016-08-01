@@ -15,5 +15,5 @@
     'blaze/dist/utilities.alignment.min.css';
   composes: u-center-block__content--horizontal from
     'blaze/dist/utilities.alignment.min.css';
-  width: 400px;
+  max-width: 600px;
 }

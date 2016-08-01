@@ -10,7 +10,9 @@ const NavBar = () => (
       <Link styleName='navlink' to='/'>Home</Link>
       <Link styleName='navlink' to='about'>About</Link>
       <div role="presentation" styleName="spacer"/>
-      <button type="button" styleName='hamburger'>&#x2261;</button>
+      <Link styleName='navlink' to='login'>Login</Link>
+      {/* TODO: only show hamburger icon when logged in
+      <button type="button" styleName='hamburger'>&#x2261;</button>*/}
     </nav>
   </div>
 );
