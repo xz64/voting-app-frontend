@@ -1,13 +1,14 @@
 import React from 'react';
-import ButtonContainer from '../forms/ButtonContainer.jsx';
 import { Link } from 'react-router';
 
-const Home = () => (
+import ButtonContainer from '../forms/ButtonContainer.jsx';
+
+const HomeScreen = () => (
   <div>
-    Welcome to Home!
+    Welcome to HomeScreen!
     <ButtonContainer/>
     Click <Link to='/about'>here</Link> to learn more!
   </div>
 );
 
-export default Home;
+export default HomeScreen;

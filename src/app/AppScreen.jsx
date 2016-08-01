@@ -2,11 +2,11 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import LoadingBar from 'react-redux-loading-bar';
 
-import styles from './App.css';
-import NavBar from './components/navigation/NavBar.jsx';
-import NavItem from './components/navigation/NavItem.jsx';
+import styles from './AppScreen.css';
+import NavBar from '../navigation/NavBar.jsx';
+import NavItem from '../navigation/NavItem.jsx';
 
-class App extends React.Component {
+class AppScreen extends React.Component {
   render() {
     return (
       <div styleName='main'>
@@ -26,8 +26,8 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+AppScreen.propTypes = {
   children: React.PropTypes.node
 };
 
-export default CSSModules(App, styles);
+export default CSSModules(AppScreen, styles);

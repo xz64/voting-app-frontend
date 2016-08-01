@@ -1,8 +1,8 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-import en from './i18n/en.json';
-import fr from './i18n/fr.json';
+import en from './en.json';
+import fr from './fr.json';
 
 export default i18next
   .use(LanguageDetector)

@@ -18,7 +18,7 @@ let config = {
   plugins: [
     new HtmlWebpackPlugin({
       title,
-      template: path.join(__dirname, 'src', 'index.html')
+      template: path.join(__dirname, srcDir, 'index.html')
     })
   ],
   module: {

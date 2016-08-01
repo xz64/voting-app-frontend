@@ -1,6 +1,7 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 import CSSModules from 'react-css-modules';
+
 import styles from './Button.css';
 
 const Button = ({ t, item, onClick }) => (

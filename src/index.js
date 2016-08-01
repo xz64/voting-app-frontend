@@ -7,9 +7,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { showLoading } from 'react-redux-loading-bar';
 import 'blaze/dist/generic.global.min.css';
 
-import i18n from './i18n.js';
-import routes from './routes.jsx';
-import store from './store.js';
+import i18n from './i18n/i18n.js';
+import routes from './app/AppRoute.js';
+import store from './store/Store.js';
 
 const history = syncHistoryWithStore(browserHistory, store);
 

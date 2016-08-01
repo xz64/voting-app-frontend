@@ -1,11 +1,10 @@
 import { hideLoading } from 'react-redux-loading-bar';
-import store from '../store.js';
+import store from '../store/Store.js';
 
 const Component = {
-  path: 'about',
   getComponent(nextState, cb) {
-    require.ensure(['../components/routes/About.jsx'], (require) => {
-      var component = require('../components/routes/About.jsx').default;
+    require.ensure(['./HomeScreen.jsx'], (require) => {
+      var component = require('./HomeScreen.jsx').default;
       store.dispatch(hideLoading());
       cb(null, component);
     });

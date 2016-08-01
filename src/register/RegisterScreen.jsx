@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Register = () => (
+const RegisterScreen = () => (
   <div styleName='login'>
   </div>
 );
 
-export default Register;
+export default RegisterScreen;

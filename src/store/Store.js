@@ -3,11 +3,10 @@ import { routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import { loadingBarReducer } from 'react-redux-loading-bar';
 
-import mainReducer from './reducers/mainReducer.js';
-
+import HomeReducer from '../home/HomeReducer.js';
 
 const reducer = combineReducers({
-  mainReducer,
+  home: HomeReducer,
   loadingBar: loadingBarReducer,
   routing: routerReducer,
   form: formReducer
