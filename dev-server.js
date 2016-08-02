@@ -10,7 +10,7 @@ var port = process.env.PORT || 8080;
 
 var server = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
-  hot: true,
+  hot: false,
   historyApiFallback: true
 });
 
