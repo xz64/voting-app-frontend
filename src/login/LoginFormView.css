@@ -1,4 +1,20 @@
 .submitbutton {
   composes: c-button from 'blaze/dist/components.buttons.min.css';
   composes: c-button--block from 'blaze/dist/components.buttons.min.css';
+  composes: c-button--primary from 'blaze/dist/components.buttons.min.css';
+}
+
+.link {
+  composes: c-link from 'blaze/dist/components.links.min.css';
+}
+
+.loginform {
+  margin: 0 auto;
+  width: 20rem;
+}
+
+@media screen and (max-width: 400px) {
+  .loginform {
+    width: 100%;
+  }
 }

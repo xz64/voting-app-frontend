@@ -15,11 +15,5 @@
     'blaze/dist/utilities.alignment.min.css';
   composes: u-center-block__content--horizontal from
     'blaze/dist/utilities.alignment.min.css';
-  width: 20rem;
-}
-
-@media screen and (max-width: 400px) {
-  .center-horizontal {
-    width: 100%;
-  }
+  width: 100%;
 }
