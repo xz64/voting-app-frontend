@@ -5,7 +5,7 @@ import store from '../store/Store.js';
 const Component = {
   path: 'about',
   getComponent(nextState, cb) {
-    require.ensure(['./AboutScreen.jsx'], (require) => {
+    require.ensure([], (require) => {
       var component = require('./AboutScreen.jsx').default;
       store.dispatch(hideLoading());
       cb(null, component);

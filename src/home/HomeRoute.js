@@ -3,7 +3,7 @@ import store from '../store/Store.js';
 
 const Component = {
   getComponent(nextState, cb) {
-    require.ensure(['./HomeScreen.jsx'], (require) => {
+    require.ensure([], (require) => {
       var component = require('./HomeScreen.jsx').default;
       store.dispatch(hideLoading());
       cb(null, component);
