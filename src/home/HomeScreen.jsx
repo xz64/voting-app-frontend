@@ -5,7 +5,7 @@ import styles from './HomeScreen.css';
 
 const HomeScreen = () => (
   <div>
-    <h1 styleName="center">Welcome to the Voting App!</h1>
+    <h1 styleName='center'>Welcome to the Voting App!</h1>
   </div>
 );
 

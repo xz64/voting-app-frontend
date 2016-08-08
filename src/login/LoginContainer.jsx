@@ -4,7 +4,7 @@ import LoginFormView from './LoginFormView.jsx';
 
 const LoginContainer = reduxForm({
   form: 'login',
-  fields: ['email', 'password']
+  fields: ['email', 'password'],
 })(LoginFormView);
 
 export default LoginContainer;
