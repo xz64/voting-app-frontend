@@ -1,8 +1,9 @@
 import React from 'react';
 
+import RegisterContainer from './RegisterContainer.jsx';
+
 const RegisterScreen = () => (
-  <div styleName='login'>
-  </div>
+  <RegisterContainer/>
 );
 
 export default RegisterScreen;

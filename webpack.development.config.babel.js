@@ -1,5 +1,5 @@
 /*eslint-env node */
-//import webpack from 'webpack';
+import webpack from 'webpack';
 import baseConfig from './webpack.base.config.babel.js';
 
 let devServerUrl = 'http://localhost:8080';
@@ -12,6 +12,11 @@ config.entry = [
 ].concat(config.entry);
 
 //config.plugins.push(new webpack.HotModuleReplacementPlugin());
+config.plugins.push(new webpack.DefinePlugin({
+  'process.env': {
+    'RECAPTCHA_SITE_KEY': '"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"'
+  }
+}));
 
 config.devtool = 'source-map';
 

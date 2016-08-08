@@ -5,6 +5,15 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import baseConfig from './webpack.base.config.babel.js';
 import { buildDir } from './webpack.base.config.babel.js';
 
+const errors = {
+  MISSING_RECAPTCHA_SITE_KEY: 'Please set the RECAPTCHA_SITE_KEY environment'
+    + ' variable to your ReCAPTCHA site key'
+};
+
+if(!process.env.RECAPTCHA_SITE_KEY) {
+  throw errors.MISSING_RECAPTCHA_SITE_KEY;
+}
+
 let config = Object.assign({}, baseConfig);
 
 config.resolve = {
@@ -26,7 +35,8 @@ config.plugins.push(
   }),
   new webpack.DefinePlugin({
     'process.env': {
-      'NODE_ENV': '"production"'
+      'NODE_ENV': '"production"',
+      'RECAPTCHA_SITE_KEY': process.env.RECAPTCHA_SITE_KEY
     }
   })
 );
