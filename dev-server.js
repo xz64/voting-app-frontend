@@ -11,7 +11,13 @@ var port = process.env.PORT || 8080;
 var server = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: false,
-  historyApiFallback: true
+  historyApiFallback: true,
+  proxy: {
+    '/api/*': {
+      target: process.env.BACKEND_SERVER || 'http://localhost:8081',
+      secure: false
+    }
+  }
 });
 
 server.listen(port, host, function (err) {
