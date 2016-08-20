@@ -1,18 +1,17 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import { Field } from 'redux-form';
+import { Field, Fields } from 'redux-form';
 
 import InputText from '../forms/InputText.jsx';
+import PasswordInputText from '../forms/PasswordInputText.jsx';
 import Captcha from '../forms/Captcha.jsx';
 import styles from './RegisterFormView.css';
 
 const RegisterFormView = ({ handleSubmit, submitting }) => (
   <div styleName='content-block'>
       <Field name='email' component={InputText} labelText='Email'/>
-      <Field name='password' component={InputText} labelText='Password'
-        type='password'/>
-      <Field name='repeatpassword' component={InputText}
-        labelText='Repeat Password' type='password'/>
+      <Fields names={['password', 'repeatpassword']}
+        component={PasswordInputText}/>
       <div styleName='captcha-field'>
         <Field name='captcharesponse' component={Captcha}/>
       </div>
