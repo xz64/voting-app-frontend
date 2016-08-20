@@ -6,6 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { showLoading } from 'react-redux-loading-bar';
 import 'blaze/dist/generic.global.min.css';
+import 'whatwg-fetch';
 
 import i18n from './i18n/i18n.js';
 import routes from './app/AppRoute.js';
