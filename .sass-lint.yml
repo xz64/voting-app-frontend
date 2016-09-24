@@ -1,0 +1,7 @@
+files:
+  include: 'src/styles/**/*.scss'
+rules:
+  class-name-format:
+    - 1
+    - convention: ^va-[_\-a-z]+$
+    - convention-explanation: 'class name must be all lower case (- and _ allowed) starting with va-'
