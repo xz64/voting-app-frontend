@@ -16,14 +16,14 @@ let config = {
   output: {
     path: path.join(__dirname, buildDir),
     publicPath: '/',
-    filename: 'app.js'
+    filename: 'app.[hash].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
       title,
       template: path.join(__dirname, srcDir, 'index.html')
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('styles.[contenthash].css'),
     new PurifyCSSPlugin({
       basePath: path.join(__dirname, 'src'),
       paths: ['**/*.jsx'],
