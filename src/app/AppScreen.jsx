@@ -1,18 +1,16 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import LoadingBar from 'react-redux-loading-bar';
 
-import styles from './AppScreen.css';
 import NavBar from '../navigation/NavBar.jsx';
 
 class AppScreen extends React.Component {
   render() {
     return (
-      <div styleName='main'>
+      <div>
         <NavBar/>
-        <LoadingBar styleName='loading'/>
-        <div styleName='center-block'>
-          <div styleName='center-horizontal'>
+        <LoadingBar/>
+        <div>
+          <div>
             {this.props.children}
           </div>
         </div>
@@ -26,4 +24,4 @@ AppScreen.propTypes = {
 };
 
 
-export default CSSModules(AppScreen, styles);
+export default AppScreen;

@@ -1,8 +1,5 @@
 import React from 'react';
 import { translate } from 'react-i18next';
-import CSSModules from 'react-css-modules';
-
-import styles from './Button.css';
 
 const Button = ({ t, item, onClick }) => (
   <div>
@@ -18,4 +15,4 @@ Button.propTypes = {
   item: React.PropTypes.number.isRequired
 };
 
-export default translate()(CSSModules(Button, styles));
+export default translate()(Button);
