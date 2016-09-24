@@ -1,6 +1,9 @@
 /*eslint-env node */
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import PurifyCSSPlugin from 'purifycss-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
 let title = 'Voting App';
 let srcDir = 'src';
@@ -19,16 +22,26 @@ let config = {
     new HtmlWebpackPlugin({
       title,
       template: path.join(__dirname, srcDir, 'index.html')
+    }),
+    new ExtractTextPlugin('styles.css'),
+    new PurifyCSSPlugin({
+      basePath: path.join(__dirname, 'src'),
+      paths: ['**/*.jsx'],
+      purifyOptions: {
+        minify: true
+      }
     })
   ],
   module: {
     loaders: [
       {test: /\.jsx?$/, loaders: ['babel'], exclude: /node_modules/},
       {test: /\.json$/, loader: 'json', exclude: /node_modules/},
-      {test: /\.css$/, loaders: ['style?sourceMap',
-        'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___'
-        + '[hash:base64:5]'], exclude: /node_modules\/(?!blaze)/}
-    ]
+      {test: /\.scss$/, loader: ExtractTextPlugin.extract('style',
+        'css!postcss!sass'), exclude: /node_modules/}
+    ],
+    postcss: function() {
+      return [autoprefixer];
+    }
   }
 };
 
