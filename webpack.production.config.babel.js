@@ -1,9 +1,11 @@
 /*eslint-env node */
 import webpack from 'webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 import baseConfig from './webpack.base.config.babel.js';
-import { buildDir } from './webpack.base.config.babel.js';
+import { buildDir, generatePurifyPlugin, generateScssLoader }
+  from './webpack.base.config.babel.js';
 
 const errors = {
   MISSING_RECAPTCHA_SITE_KEY: 'Please set the RECAPTCHA_SITE_KEY environment'
@@ -38,7 +40,11 @@ config.plugins.push(
       'NODE_ENV': '"production"',
       'RECAPTCHA_SITE_KEY': process.env.RECAPTCHA_SITE_KEY
     }
-  })
+  }),
+  new ExtractTextPlugin('styles.[contenthash].css'),
+  generatePurifyPlugin(true)
 );
+
+config.module.loaders.push(generateScssLoader(true));
 
 export default config;

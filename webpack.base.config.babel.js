@@ -22,22 +22,12 @@ let config = {
     new HtmlWebpackPlugin({
       title,
       template: path.join(__dirname, srcDir, 'index.html')
-    }),
-    new ExtractTextPlugin('styles.[contenthash].css'),
-    new PurifyCSSPlugin({
-      basePath: path.join(__dirname, 'src'),
-      paths: ['**/*.jsx'],
-      purifyOptions: {
-        minify: true
-      }
     })
   ],
   module: {
     loaders: [
       {test: /\.jsx?$/, loaders: ['babel'], exclude: /node_modules/},
-      {test: /\.json$/, loader: 'json', exclude: /node_modules/},
-      {test: /\.scss$/, loader: ExtractTextPlugin.extract('style',
-        'css!postcss!sass'), exclude: /node_modules/}
+      {test: /\.json$/, loader: 'json', exclude: /node_modules/}
     ],
     postcss: function() {
       return [autoprefixer];
@@ -45,5 +35,35 @@ let config = {
   }
 };
 
+// production builds will have unused classes removed
+function generatePurifyPlugin(minify) {
+  return new PurifyCSSPlugin({
+    basePath: path.join(__dirname, 'src'),
+    paths: ['**/*.jsx'],
+    purifyOptions: {
+      minify: minify
+    }
+  });
+}
+
+// production builds will make use of extractTextPlugin
+// dev builds will just inline the css into the js bundle for fast builds
+function generateScssLoader(extractText) {
+  var loader = {
+    test: /\.scss$/,
+    exclude: /node_modules/,
+  };
+
+  loader.loader = extractText ?
+    ExtractTextPlugin.extract('style', 'css!postcss!sass')
+    : 'style!css!postcss!sass';
+
+  return loader;
+}
+
 export default config;
-export { buildDir };
+export {
+  buildDir,
+  generatePurifyPlugin,
+  generateScssLoader
+};
