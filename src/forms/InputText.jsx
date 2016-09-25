@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 
 const InputText = (props) => {
   return (
-    <div>
-      <label>{props.labelText}</label>
-      <input type={props.type || 'text'} {...props.input}
+    <div className='c-form-element'>
+      <label className='c-label'>{props.labelText}</label>
+      <input className='c-field' type={props.type || 'text'} {...props.input}
         placeholder={props.placeholder || ''}/>
     </div>
   );

@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 
 const Button = ({ t, item, onClick }) => (
   <div>
-    <button type='button' styleName='button' onClick={onClick}>
+    <button className='c-button' type='button' onClick={onClick}>
       {t('click')}{item}
     </button>
   </div>

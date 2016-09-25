@@ -10,13 +10,15 @@ const RegisterFormView = ({ handleSubmit, submitting }) => (
       <Field name='email' component={InputText} labelText='Email'/>
       <Fields names={['password', 'repeatpassword']}
         component={PasswordInputText}/>
-      <div>
+      <fieldset className='c-fieldset'>
         <Field name='captcharesponse' component={Captcha}/>
-      </div>
-      <button type='submit' disabled={submitting}
-        onClick={handleSubmit}>
-        {submitting ? 'Please wait...' : 'Register'}
-      </button>
+      </fieldset>
+      <fieldset className='c-fieldset'>
+        <button className='c-button c-button--block c-button--primary'
+          type='submit' disabled={submitting} onClick={handleSubmit}>
+          {submitting ? 'Please wait...' : 'Register'}
+        </button>
+      </fieldset>
   </div>
 );
 

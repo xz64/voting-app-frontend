@@ -11,11 +11,14 @@ const LoginFormView = ({ fields: { email, password } , handleSubmit,
         type='text'/>
       <InputText formField={password} forAttr='password' labelText='Password'
         type='password'/>
-      <button type='submit' disabled={submitting}>
-        {submitting ? 'Please wait...' : 'Login'}
-      </button>
+      <fieldset className='c-fieldset'>
+        <button className='c-button c-button--block c-button--primary'
+          type='submit' disabled={submitting}>
+          {submitting ? 'Please wait...' : 'Login'}
+        </button>
+      </fieldset>
     </form>
-    Don't have a login? Click <Link to='register'>here</Link>
+    Don't have a login? Click <Link className='c-link' to='register'>here</Link>
     {' '}to register.
   </div>
 );

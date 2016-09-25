@@ -6,11 +6,12 @@ import NavBar from '../navigation/NavBar.jsx';
 class AppScreen extends React.Component {
   render() {
     return (
-      <div>
+      <div className='c-text'>
         <NavBar/>
-        <LoadingBar/>
-        <div>
-          <div>
+        <LoadingBar style={{backgroundColor: '#6ebaf7'}}/>
+        <div className='u-center-block'>
+          <div className={'u-center-block__content ' +
+            'u-center-block__content--horizontal'}>
             {this.props.children}
           </div>
         </div>

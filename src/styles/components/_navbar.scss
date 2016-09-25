@@ -1,0 +1,59 @@
+.va-navbar {
+  background-color: $color-black;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+%va-navlink {
+  background-color: $color-black;
+  border: 0;
+  color: $color-white;
+  display: block;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+.va-navlink {
+  @extend %va-navlink;
+
+  &:active,
+  &:focus,
+  &:visited {
+    @extend %va-navlink;
+  }
+
+  &:hover {
+    background-color: $color-tint;
+  }
+}
+
+.va-spacer {
+  flex: 1;
+}
+
+.va-navbar-spacer {
+  margin-bottom: 3rem;
+}
+
+.va-hamburger {
+  @extend %va-navlink;
+  font-size: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &:active {
+    border: 0;
+    outline: 0;
+  }
+}
