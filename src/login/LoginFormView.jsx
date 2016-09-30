@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'redux-little-router';
 
 import InputText from '../forms/InputText.jsx';
 
@@ -18,8 +18,8 @@ const LoginFormView = ({ fields: { email, password } , handleSubmit,
         </button>
       </fieldset>
     </form>
-    Don't have a login? Click <Link className='c-link' to='register'>here</Link>
-    {' '}to register.
+    Don't have a login? Click
+      <Link className='c-link' href='/register'>here</Link> {' '}to register.
   </div>
 );
 

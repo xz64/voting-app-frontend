@@ -6,7 +6,7 @@ const Captcha = (props) => (
     {props.meta.touched && props.meta.error}
     <ReCAPTCHA
       sitekey={process.env.RECAPTCHA_SITE_KEY}
-      onChange={response => props.input.onChange(response)}
+      onChange={props.input.onChange}
     />
     </div>
 );

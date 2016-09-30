@@ -1,8 +1,11 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
+import { createStoreWithRouter, initializeCurrentLocation }
+  from 'redux-little-router';
 import { routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import { loadingBarReducer } from 'react-redux-loading-bar';
 
+import routeConfig from '../routes/Routes.js';
 import HomeReducer from '../home/HomeReducer.js';
 
 const reducer = combineReducers({
@@ -12,14 +15,22 @@ const reducer = combineReducers({
   form: formReducer
 });
 
-let store;
+let enhancers = [
+  createStoreWithRouter(routeConfig)
+];
 
-if(process.env.NODE_ENV === 'production') {
-  store = createStore(reducer);
+if(process.env.NODE_ENV !== 'production') {
+  if(window.devToolsExtension) {
+    enhancers.push(window.devToolsExtension());
+  }
 }
-else {
-  store = createStore(reducer, undefined,
-    window.devToolsExtension && window.devToolsExtension());
+
+const store = createStore(reducer, undefined, compose(...enhancers));
+
+const initialLocation = store.getState().router;
+
+if(initialLocation) {
+  store.dispatch(initializeCurrentLocation(initialLocation));
 }
 
 export default store;

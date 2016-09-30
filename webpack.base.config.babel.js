@@ -1,5 +1,6 @@
 /*eslint-env node */
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import PurifyCSSPlugin from 'purifycss-webpack-plugin';
@@ -19,6 +20,10 @@ let config = {
     filename: 'app.[hash].js'
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      async: true
+    }),
     new HtmlWebpackPlugin({
       title,
       template: path.join(__dirname, srcDir, 'index.html')
