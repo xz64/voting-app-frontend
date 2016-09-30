@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'redux-little-router';
+import { Field } from 'redux-form';
 
 import InputText from '../forms/InputText.jsx';
 
@@ -7,10 +8,8 @@ const LoginFormView = ({ fields: { email, password } , handleSubmit,
   submitting }) => (
   <div>
     <form onSubmit={handleSubmit}>
-      <InputText formField={email} forAttr='email' labelText='Email Address'
-        type='text'/>
-      <InputText formField={password} forAttr='password' labelText='Password'
-        type='password'/>
+      <Field name='email' component={InputText} labelText='Email'/>
+      <Field name='password' component={InputText} labelText='Password'/>
       <fieldset className='c-fieldset'>
         <button className='c-button c-button--block c-button--primary'
           type='submit' disabled={submitting}>
@@ -18,7 +17,7 @@ const LoginFormView = ({ fields: { email, password } , handleSubmit,
         </button>
       </fieldset>
     </form>
-    Don't have a login? Click
+    Don't have a login? Click{' '}
       <Link className='c-link' href='/register'>here</Link> {' '}to register.
   </div>
 );
