@@ -12,7 +12,7 @@ let buildDir = 'dist';
 
 let config = {
   entry: [
-    path.join(__dirname, srcDir, 'index.js')
+    path.join(__dirname, srcDir, 'main.js')
   ],
   output: {
     path: path.join(__dirname, buildDir),
@@ -26,7 +26,7 @@ let config = {
     }),
     new HtmlWebpackPlugin({
       title,
-      template: path.join(__dirname, srcDir, 'index.html')
+      template: path.join(__dirname, srcDir, 'index.template.ejs')
     })
   ],
   module: {

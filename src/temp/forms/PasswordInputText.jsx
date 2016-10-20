@@ -4,10 +4,9 @@ import InputText from './InputText.jsx';
 
 const PasswordInputText = (props) => (
   <div>
-    <InputText labelText='Password' type='password' {...props.password}
-      hideError={props.repeatpassword.meta.active}/>
+    <InputText labelText='Password' type='password' {...props.password}/>
     <InputText labelText='Repeat Password' type='password'
-      {...props.repeatpassword} hideError={false}/>
+      {...props.repeatpassword}/>
   </div>
 );
 
