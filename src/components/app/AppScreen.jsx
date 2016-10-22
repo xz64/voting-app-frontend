@@ -4,6 +4,7 @@ import { connect } from 'cerebral-view-react';
 import NavBar from '../navigation/NavBar.jsx';
 import HomeScreen from '../home/HomeScreen.jsx';
 import AboutScreen from '../about/AboutScreen.jsx';
+import RegisterScreen from '../register/RegisterScreen.jsx';
 
 const stateProps = {
   route: 'app.currentRoute'
@@ -13,6 +14,8 @@ function getRouteView(route) {
   switch(route) {
   case 'about':
     return AboutScreen;
+  case 'register':
+    return RegisterScreen;
   default:
     return HomeScreen;
   }

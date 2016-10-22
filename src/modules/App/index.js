@@ -1,5 +1,6 @@
 import wentHome from './chains/wentHome';
 import wentAbout from './chains/wentAbout';
+import wentRegister from './chains/wentRegister';
 
 export default module => {
   module.addState({
@@ -8,6 +9,7 @@ export default module => {
 
   module.addSignals({
     wentHome,
-    wentAbout
+    wentAbout,
+    wentRegister
   });
 };
