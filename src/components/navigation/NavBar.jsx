@@ -1,16 +1,27 @@
 import React from 'react';
+import { connect } from 'cerebral-view-react';
 
-const NavBar = () => (
+const stateProps = {
+  userID: 'app.user.id'
+};
+
+const NavBar = ({ userID }) => (
   <div role='presentation' className='va-navbar-spacer'>
     <nav className='va-navbar'>
       <a className='va-navlink' href='/#/'>Home</a>
       <a className='va-navlink' href='/#/about'>About</a>
       <div className='va-spacer' role='presentation'/>
-      <a className='va-navlink' href='/#/login'>Login</a>
+      {userID ? (<a className='va-navlink' href='/#/'>{userID}</a>) : null}
+      {userID ? (<a className='va-navlink' href='/#/logout'>Logout</a>) :
+        (<a className='va-navlink' href='/#/login'>Login</a>)}
       {/* TODO: only show hamburger icon when logged in
       <button type='button' styleName='hamburger'>&#x2261;</button>*/}
     </nav>
   </div>
 );
 
-export default NavBar;
+NavBar.propTypes = {
+  userID: React.PropTypes.string
+};
+
+export default connect(stateProps, {}, NavBar);

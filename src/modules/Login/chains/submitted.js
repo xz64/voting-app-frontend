@@ -5,20 +5,21 @@ import validateForm from '../actions/validateForm.js';
 import submitForm from '../actions/submitForm.js';
 
 export default [
-  set('state:register.asyncError', null),
+  set('state:login.loggingIn', true),
+  set('state:login.message', null),
+  set('state:login.asyncError', null),
   validateForm, {
     true: [
       submitForm, {
         success: [
-          redirect('/login'),
-          set('state:login.message', 'Registration successful. Please log in.')
+          redirect('/')
         ],
         error: [
-          set('state:register.asyncError', 'Username already taken or captcha '
-            + 'incorrect.')
+          set('state:login.asyncError', 'Username or password incorrect.')
         ]
       }
     ],
     false: []
-  }
+  },
+  set('state:login.loggingIn', false),
 ];

@@ -7,17 +7,21 @@ import Forms from 'cerebral-module-forms';
 
 import App from './modules/App/index.js';
 import Register from './modules/Register/index.js';
+import Login from './modules/Login/index.js';
 
 const controller = Controller(Model({}));
 
 controller.addModules({
   app: App,
   register: Register,
+  login: Login,
   forms: Forms(),
   router: Router({
     '/': 'app.wentHome',
     '/about': 'app.wentAbout',
-    '/register': 'app.wentRegister'
+    '/register': 'app.wentRegister',
+    '/login': 'app.wentLogin',
+    '/logout': 'app.wentLogout'
   }, {
     onlyHash: true,
     preventAutostart: false,
@@ -25,7 +29,10 @@ controller.addModules({
     query: true
   }),
   http: Http({
-    baseUrl: '/api'
+    baseUrl: '/api',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
   }),
   devtools: process.env.NODE_ENV === 'production' ? () => {} : Devtools()
 });

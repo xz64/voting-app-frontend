@@ -5,6 +5,7 @@ import NavBar from '../navigation/NavBar.jsx';
 import HomeScreen from '../home/HomeScreen.jsx';
 import AboutScreen from '../about/AboutScreen.jsx';
 import RegisterScreen from '../register/RegisterScreen.jsx';
+import LoginScreen from '../login/LoginScreen.jsx';
 
 const stateProps = {
   route: 'app.currentRoute'
@@ -16,6 +17,8 @@ function getRouteView(route) {
     return AboutScreen;
   case 'register':
     return RegisterScreen;
+  case 'login':
+    return LoginScreen;
   default:
     return HomeScreen;
   }
