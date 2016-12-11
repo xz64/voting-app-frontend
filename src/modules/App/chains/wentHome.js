@@ -1,8 +1,8 @@
-import { set } from 'cerebral/operators';
+import wentFactory from '../factories/wentFactory.js';
 
 import loadedPage from './loadedPage.js';
 
 export default [
-  set('state:app.currentRoute', 'home'),
+  wentFactory('home'),
   ...loadedPage
 ];

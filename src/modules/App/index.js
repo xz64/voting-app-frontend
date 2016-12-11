@@ -4,19 +4,18 @@ import wentRegister from './chains/wentRegister';
 import wentLogin from './chains/wentLogin';
 import wentLogout from './chains/wentLogout';
 
-export default module => {
-  module.addState({
+export default {
+  state: {
     currentRoute: 'home',
     user: {
       id: null
     }
-  });
-
-  module.addSignals({
+  },
+  signals: {
     wentHome,
     wentAbout,
     wentRegister,
     wentLogin,
     wentLogout
-  });
+  }
 };

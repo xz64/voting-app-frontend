@@ -1,10 +1,9 @@
-function getCurrentUser({ services, output }) {
-  services.http.get('/whoami')
-  .then(output.success)
-  .catch(output.error);
+function getCurrentUser({ axios, path }) {
+  return axios.get('/whoami')
+  .then(response => path.success({ result: response.data}))
+  .catch(error => {
+    return path.error({ error: error.response.data });
+  });
 }
-
-getCurrentUser.async = true;
-getCurrentUser.outputs = ['success', 'error'];
 
 export default getCurrentUser;

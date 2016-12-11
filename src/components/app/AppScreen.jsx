@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'cerebral-view-react';
+import { connect } from 'cerebral/react';
 
 import NavBar from '../navigation/NavBar.jsx';
 import HomeScreen from '../home/HomeScreen.jsx';

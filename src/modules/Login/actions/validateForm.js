@@ -1,10 +1,8 @@
-import isValidForm from 'cerebral-module-forms/helpers/isValidForm';
+import { isValidForm } from 'cerebral-forms';
 
-function validateForm({ state, output }) {
+function validateForm({ state, path }) {
   const isValid = isValidForm(state.get('login.form'));
-  output[isValid.toString()]();
+  return path[isValid.toString()]();
 }
-
-validateForm.outputs = ['true', 'false'];
 
 export default validateForm;

@@ -1,19 +1,16 @@
-import toJSON from 'cerebral-module-forms/helpers/toJSON';
+import { formToJSON } from 'cerebral-forms';
 
-function submitForm({ state, services, output }) {
-  const formValues = toJSON(state.get('register.form'));
+function submitForm({ state, axios, path }) {
+  const formValues = formToJSON(state.get('register.form'));
   const payload = {
     email: formValues.userId,
     password: formValues.password,
     captcharesponse: formValues.captcha
   };
 
-  services.http.post('/register', payload)
-  .then(output.success)
-  .catch(output.error);
+  return axios.post('/register', payload)
+  .then(response => path.success({ result: response.data}))
+  .catch(error => path.error({ error: error.response.data }));
 }
-
-submitForm.async = true;
-submitForm.outputs = ['success', 'error'];
 
 export default submitForm;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'cerebral-view-react';
-import isValidForm from 'cerebral-module-forms/helpers/isValidForm';
+import { connect } from 'cerebral/react';
+import { isValidForm } from 'cerebral-forms';
 
 import InputText from '../forms/InputText.jsx';
 import Captcha from '../forms/Captcha.jsx';
@@ -19,15 +19,17 @@ function wrapSubmit(onSubmit) {
 
 const stateProps = {
   form: 'register.form',
-  asyncError: 'register.asyncError'
+  asyncError: 'register.asyncError',
+  submitting: 'register.submitting'
 };
 
 const signalProps = {
-  fieldChanged: 'forms.fieldChanged',
+  fieldChanged: 'fieldChanged',
   onSubmit: 'register.submitted'
 };
 
-const RegisterForm = ({ onSubmit, fieldChanged, form, asyncError }) => (
+const RegisterForm = ({ onSubmit, submitting, fieldChanged, form,
+  asyncError }) => (
   <div>
     <InputText
       label='User ID'
@@ -55,7 +57,7 @@ const RegisterForm = ({ onSubmit, fieldChanged, form, asyncError }) => (
       className='c-button c-button--block'
       type='button'
       onClick={wrapSubmit(onSubmit)}
-      disabled={!isValidForm(form)}
+      disabled={submitting || !isValidForm(form)}
     >
       Register
     </button>
@@ -66,7 +68,8 @@ RegisterForm.propTypes = {
   form: React.PropTypes.object,
   fieldChanged: React.PropTypes.func,
   onSubmit: React.PropTypes.func,
-  asyncError: React.PropTypes.string
+  asyncError: React.PropTypes.string,
+  submitting: React.PropTypes.bool
 };
 
 export default connect(stateProps, signalProps, RegisterForm);

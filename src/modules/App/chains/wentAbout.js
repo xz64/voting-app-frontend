@@ -1,5 +1,5 @@
-import { set } from 'cerebral/operators';
+import wentFactory from '../factories/wentFactory.js';
 
 export default [
-  set('state:app.currentRoute', 'about')
+  wentFactory('about')
 ];

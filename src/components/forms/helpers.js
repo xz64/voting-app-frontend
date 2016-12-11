@@ -3,9 +3,9 @@ import React from 'react';
 function generateErrorMessage(field) {
   let message = null;
   let result = null;
-  if (field.isTouched && field.isRequired && field.value === '') {
+  if (!field.isPristine && field.isRequired && field.value === '') {
     message = field.requiredMessage;
-  } else if (field.errorMessage) {
+  } else if (!field.isPristine && field.errorMessage) {
     message = field.errorMessage;
   }
   if (message) {

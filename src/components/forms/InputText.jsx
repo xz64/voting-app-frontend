@@ -4,9 +4,10 @@ import classNames from 'classnames';
 import { generateErrorMessage } from './helpers.js';
 
 const InputText = (props) => {
+  let errorMessage = generateErrorMessage(props.field);
   let inputClasses = classNames({
     'c-field': true,
-    'c-field--error': props.field.errorMessage
+    'c-field--error': errorMessage
   });
 
   let inputType = props.type || 'text';
@@ -15,7 +16,7 @@ const InputText = (props) => {
     <div className='o-form-element'>
       <label className='c-label'>
         {props.label}
-        {generateErrorMessage(props.field)}
+        {errorMessage}
       </label>
       <input
         type={inputType}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Container } from 'cerebral-view-react';
+import { Container } from 'cerebral/react';
 import { I18nextProvider } from 'react-i18next';
 
 import './styles/main.scss';

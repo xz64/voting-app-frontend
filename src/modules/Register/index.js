@@ -1,22 +1,24 @@
-import Form from 'cerebral-module-forms/Form';
+import { form } from 'cerebral-forms';
 
 import submitted from './chains/submitted.js';
 
-export default module => {
-  module.addState({
-    form: Form({
+export default {
+  state: {
+    form: form({
       userId: {
-        value: null,
+        value: '',
         isRequired: true,
+        isValueRules: ['isValue'],
         requiredMessage: 'User ID is required.'
       },
       password: {
-        value: null,
+        value: '',
         isRequired: true,
+        isValueRules: ['isValue'],
         requiredMessage: 'Password is required.',
-        validations: [
+        validationRules: [
           'minLength:15',
-          'equalsField:repeatPassword'
+          'equalsField:password'
         ],
         errorMessages: [
           'Password must be at least 15 characters.',
@@ -25,10 +27,16 @@ export default module => {
         dependsOn: 'register.form.repeatPassword'
       },
       repeatPassword: {
-        value: null,
+        value: '',
         isRequired: true,
+        isValueRules: ['isValue'],
+        validationRules: [
+          'equalsField:password'
+        ],
+        errorMessages: [
+          'Password must match repeat password.'
+        ],
         requiredMessage: 'Repeat password is required.',
-        validations: ['equalsField:password'],
         dependsOn: 'register.form.password'
       },
       captcha: {
@@ -37,10 +45,10 @@ export default module => {
         requiredMessage: 'Captcha is required.'
       }
     }),
-    asyncError: null
-  });
-
-  module.addSignals({
+    asyncError: null,
+    submitting: false
+  },
+  signals: {
     submitted
-  });
+  }
 };

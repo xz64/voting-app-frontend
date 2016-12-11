@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'cerebral-view-react';
-import isValidForm from 'cerebral-module-forms/helpers/isValidForm';
+import { connect } from 'cerebral/react';
+import { isValidForm } from 'cerebral-forms';
 
 import InputText from '../forms/InputText.jsx';
 
@@ -24,7 +24,7 @@ const stateProps = {
 };
 
 const signalProps = {
-  fieldChanged: 'forms.fieldChanged',
+  fieldChanged: 'fieldChanged',
   onSubmit: 'login.submitted'
 };
 

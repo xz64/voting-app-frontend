@@ -1,10 +1,10 @@
-import Form from 'cerebral-module-forms/Form';
+import { form } from 'cerebral-forms';
 
 import submitted from './chains/submitted.js';
 
-export default module => {
-  module.addState({
-    form: Form({
+export default {
+  state: {
+    form: form({
       userId: {
         value: null,
         isRequired: true,
@@ -19,9 +19,8 @@ export default module => {
     asyncError: null,
     message: null,
     loggingIn: false
-  });
-
-  module.addSignals({
+  },
+  signals: {
     submitted
-  });
+  }
 };
