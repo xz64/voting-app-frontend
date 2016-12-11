@@ -1,6 +1,17 @@
 {
   "translation": {
-    "greeting": "Hello",
-    "click": "Click"
+    "WELCOME_TO_APP": "Welcome to the Voting App!",
+    "WELCOME_TO_ABOUT": "Welcome to the about screen!",
+    "GO_HOME": "Go home",
+    "HOME": "Home",
+    "ABOUT": "About",
+    "LOGOUT": "Logout",
+    "LOGIN": "Login",
+    "LOGGING_IN": "Logging in...",
+    "REGISTER": "Register",
+    "USER_ID": "User ID",
+    "PASSWORD": "Password",
+    "REPEAT_PASSWORD": "Repeat Password",
+    "REGISTER_SUGGESTION": "Don't have an account? Click the following link to register:"
   }
 }

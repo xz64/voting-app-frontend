@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'cerebral/react';
 import { isValidForm } from 'cerebral-forms';
+import { translate } from 'react-i18next';
 
 import InputText from '../forms/InputText.jsx';
 import Captcha from '../forms/Captcha.jsx';
@@ -29,21 +30,21 @@ const signalProps = {
 };
 
 const RegisterForm = ({ onSubmit, submitting, fieldChanged, form,
-  asyncError }) => (
+  asyncError, t }) => (
   <div>
     <InputText
-      label='User ID'
+      label={t('USER_ID')}
       onChange={generateHandler(fieldChanged, 'register.form.userId')}
       field={form.userId}
     />
     <InputText
-      label='Password'
+      label={t('PASSWORD')}
       type='password'
       onChange={generateHandler(fieldChanged, 'register.form.password')}
       field={form.password}
     />
     <InputText
-      label='Repeat Password'
+      label={t('REPEAT_PASSWORD')}
       type='password'
       onChange={generateHandler(fieldChanged, 'register.form.repeatPassword')}
       field={form.repeatPassword}
@@ -59,7 +60,7 @@ const RegisterForm = ({ onSubmit, submitting, fieldChanged, form,
       onClick={wrapSubmit(onSubmit)}
       disabled={submitting || !isValidForm(form)}
     >
-      Register
+      {t('REGISTER')}
     </button>
   </div>
 );
@@ -72,4 +73,4 @@ RegisterForm.propTypes = {
   submitting: React.PropTypes.bool
 };
 
-export default connect(stateProps, signalProps, RegisterForm);
+export default connect(stateProps, signalProps, translate()(RegisterForm));

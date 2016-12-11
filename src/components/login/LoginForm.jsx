@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'cerebral/react';
 import { isValidForm } from 'cerebral-forms';
+import { translate } from 'react-i18next';
 
 import InputText from '../forms/InputText.jsx';
 
@@ -29,16 +30,16 @@ const signalProps = {
 };
 
 const LoginForm = ({ message, onSubmit, fieldChanged, form, asyncError,
-  loggingIn }) => (
+  loggingIn, t }) => (
   <div>
     {message && <div>{message}</div>}
     <InputText
-      label='User ID'
+      label={t('USER_ID')}
       onChange={generateHandler(fieldChanged, 'login.form.userId')}
       field={form.userId}
     />
     <InputText
-      label='Password'
+      label={t('PASSWORD')}
       type='password'
       onChange={generateHandler(fieldChanged, 'login.form.password')}
       field={form.password}
@@ -50,7 +51,7 @@ const LoginForm = ({ message, onSubmit, fieldChanged, form, asyncError,
       onClick={wrapSubmit(onSubmit)}
       disabled={!isValidForm(form) || loggingIn}
     >
-      {loggingIn ? 'Logging in...' : 'Login'}
+      {t(loggingIn ? 'LOGGING_IN' : 'LOGIN')}
     </button>
   </div>
 );
@@ -64,4 +65,4 @@ LoginForm.propTypes = {
   loggingIn: React.PropTypes.bool
 };
 
-export default connect(stateProps, signalProps, LoginForm);
+export default connect(stateProps, signalProps, translate()(LoginForm));

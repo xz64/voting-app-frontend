@@ -1,16 +1,18 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
 import LoginForm from './LoginForm.jsx';
 
-const LoginScreen = () => (
+const LoginScreen = ({ t }) => (
   <div className='va-form-container'>
     <LoginForm/>
     <div>
-      {`Don't have an account? Click `}
-      <a href='/#/register'>here</a>
-      {` to register.`}
+      {t('REGISTER_SUGGESTION')}
+    </div>
+    <div>
+      <a href='/#/register'>{t('REGISTER')}</a>
     </div>
   </div>
 );
 
-export default LoginScreen;
+export default translate()(LoginScreen);

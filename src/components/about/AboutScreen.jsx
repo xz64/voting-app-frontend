@@ -1,10 +1,11 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
-const AboutScreen = () => (
+const AboutScreen = ({ t }) => (
   <div>
-    Welcome to AboutScreen!
-    <a href='/#/'>Go home</a>
+    {t('WELCOME_TO_ABOUT')}
+    <a href='/#/'>{t('GO_HOME')}</a>
   </div>
 );
 
-export default AboutScreen;
+export default translate()(AboutScreen);

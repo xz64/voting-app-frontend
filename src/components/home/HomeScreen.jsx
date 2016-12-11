@@ -1,9 +1,10 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
-const HomeScreen = () => (
+const HomeScreen = ({ t }) => (
   <div>
-    <h1>Welcome to the Voting App!</h1>
+    <h1>{t('WELCOME_TO_APP')}</h1>
   </div>
 );
 
-export default HomeScreen;
+export default translate()(HomeScreen);
