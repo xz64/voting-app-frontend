@@ -19,7 +19,7 @@ const axiosInstance =  axios.create({
 axiosInstance.interceptors.response.use(function (response) {
   return response;
 }, function (error) {
-  if (error.response.status === 401) {
+  if (error.config.url !== '/api/whoami' && error.response.status === 401) {
     window.setTimeout(() => {
       window.location.href = '/#/login';
     });

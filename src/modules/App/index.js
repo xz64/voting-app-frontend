@@ -9,7 +9,8 @@ export default {
     currentRoute: 'home',
     user: {
       id: null
-    }
+    },
+    polls: []
   },
   signals: {
     wentHome,

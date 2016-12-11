@@ -12,6 +12,8 @@
     "USER_ID": "User ID",
     "PASSWORD": "Password",
     "REPEAT_PASSWORD": "Repeat Password",
-    "REGISTER_SUGGESTION": "Don't have an account? Click the following link to register:"
+    "REGISTER_SUGGESTION": "Don't have an account? Click the following link to register:",
+    "HERE_ARE_POLLS": "Select a poll to view its results and vote on it.",
+    "VIEW": "View"
   }
 }
