@@ -11,4 +11,8 @@ const HomeScreen = ({ t }) => (
   </div>
 );
 
+HomeScreen.propTypes = {
+  t: React.PropTypes.func
+};
+
 export default translate()(HomeScreen);

@@ -70,7 +70,8 @@ RegisterForm.propTypes = {
   fieldChanged: React.PropTypes.func,
   onSubmit: React.PropTypes.func,
   asyncError: React.PropTypes.string,
-  submitting: React.PropTypes.bool
+  submitting: React.PropTypes.bool,
+  t: React.PropTypes.func
 };
 
 export default connect(stateProps, signalProps, translate()(RegisterForm));

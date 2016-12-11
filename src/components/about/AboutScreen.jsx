@@ -8,4 +8,8 @@ const AboutScreen = ({ t }) => (
   </div>
 );
 
+AboutScreen.propTypes = {
+  t: React.PropTypes.func
+};
+
 export default translate()(AboutScreen);

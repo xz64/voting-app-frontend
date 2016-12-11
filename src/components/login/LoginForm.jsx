@@ -62,7 +62,8 @@ LoginForm.propTypes = {
   onSubmit: React.PropTypes.func,
   asyncError: React.PropTypes.string,
   message: React.PropTypes.string,
-  loggingIn: React.PropTypes.bool
+  loggingIn: React.PropTypes.bool,
+  t: React.PropTypes.func
 };
 
 export default connect(stateProps, signalProps, translate()(LoginForm));

@@ -27,7 +27,8 @@ const NavBar = ({ userID, currentRoute, t }) => (
 
 NavBar.propTypes = {
   userID: React.PropTypes.string,
-  currentRoute: React.PropTypes.string
+  currentRoute: React.PropTypes.string,
+  t: React.PropTypes.func
 };
 
 export default connect(stateProps, {}, translate()(NavBar));
