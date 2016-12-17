@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 import { connect } from 'cerebral/react';
 
 const stateProps = {
-  polls: 'app.polls'
+  polls: 'polls.polls'
 };
 
 const PollDisplay = translate()(({ poll, key, t }) => (
@@ -19,7 +19,7 @@ function pollMap(poll, index) {
 
 const PollListing = ({ polls }) => (
   <ul className='c-list'>
-    {polls.map(pollMap)}
+    {polls && polls.map(pollMap)}
   </ul>
 );
 

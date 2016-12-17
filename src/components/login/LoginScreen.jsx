@@ -17,6 +17,6 @@ const LoginScreen = ({ t }) => (
 
 LoginScreen.propTypes = {
   t: React.PropTypes.func
-}
+};
 
 export default translate()(LoginScreen);

@@ -14,6 +14,11 @@
     "REPEAT_PASSWORD": "Repeat Password",
     "REGISTER_SUGGESTION": "Don't have an account? Click the following link to register:",
     "HERE_ARE_POLLS": "Select a poll to view its results and vote on it.",
-    "VIEW": "View"
+    "VIEW": "View",
+    "VOTE_COUNT": "Votes: ",
+    "VOTE": "Vote",
+    "SELECT_A_CHOICE": "Select a choice and click vote to vote on it.",
+    "S_ALREADY_VOTED": "You have already voted on this poll and may not vote on it again.",
+    "VOTE_SUCCESS": "Your vote has been successfully cast."
   }
 }

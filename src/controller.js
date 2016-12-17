@@ -8,6 +8,7 @@ import axios from 'axios';
 import App from './modules/App/index.js';
 import Register from './modules/Register/index.js';
 import Login from './modules/Login/index.js';
+import Polls from './modules/Polls/index.js';
 
 const axiosInstance =  axios.create({
   baseURL: '/api',
@@ -41,7 +42,8 @@ const controller = Controller({
       '/about': 'app.wentAbout',
       '/register': 'app.wentRegister',
       '/login': 'app.wentLogin',
-      '/logout': 'app.wentLogout'
+      '/logout': 'app.wentLogout',
+      '/polls/:id': 'app.wentPoll'
     },
     onlyHash: true,
     preventAutostart: false,
@@ -51,7 +53,8 @@ const controller = Controller({
   modules: {
     app: App,
     register: Register,
-    login: Login
+    login: Login,
+    polls: Polls
   }
 });
 
