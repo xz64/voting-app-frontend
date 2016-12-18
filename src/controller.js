@@ -39,7 +39,6 @@ const controller = Controller({
   router: Router({
     routes: {
       '/': 'app.wentHome',
-      '/about': 'app.wentAbout',
       '/register': 'app.wentRegister',
       '/login': 'app.wentLogin',
       '/logout': 'app.wentLogout',

@@ -1,5 +1,4 @@
 import wentHome from './chains/wentHome';
-import wentAbout from './chains/wentAbout';
 import wentRegister from './chains/wentRegister';
 import wentLogin from './chains/wentLogin';
 import wentLogout from './chains/wentLogout';
@@ -15,7 +14,6 @@ export default {
   },
   signals: {
     wentHome,
-    wentAbout,
     wentRegister,
     wentLogin,
     wentLogout,

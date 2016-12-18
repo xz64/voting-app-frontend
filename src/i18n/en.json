@@ -1,10 +1,8 @@
 {
   "translation": {
     "WELCOME_TO_APP": "Welcome to the Voting App!",
-    "WELCOME_TO_ABOUT": "Welcome to the about screen!",
     "GO_HOME": "Go home",
     "HOME": "Home",
-    "ABOUT": "About",
     "LOGOUT": "Logout",
     "LOGIN": "Login",
     "LOGGING_IN": "Logging in...",

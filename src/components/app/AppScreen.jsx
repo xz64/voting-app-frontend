@@ -3,7 +3,6 @@ import { connect } from 'cerebral/react';
 
 import NavBar from '../navigation/NavBar.jsx';
 import HomeScreen from '../home/HomeScreen.jsx';
-import AboutScreen from '../about/AboutScreen.jsx';
 import RegisterScreen from '../register/RegisterScreen.jsx';
 import LoginScreen from '../login/LoginScreen.jsx';
 import PollScreen from '../polls/PollScreen.jsx';
@@ -14,8 +13,6 @@ const stateProps = {
 
 function getRouteView(route) {
   switch(route) {
-  case 'about':
-    return AboutScreen;
   case 'register':
     return RegisterScreen;
   case 'login':
