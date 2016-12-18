@@ -17,6 +17,8 @@
     "VOTE": "Vote",
     "SELECT_A_CHOICE": "Select a choice and click vote to vote on it.",
     "S_ALREADY_VOTED": "You have already voted on this poll and may not vote on it again.",
-    "VOTE_SUCCESS": "Your vote has been successfully cast."
+    "VOTE_SUCCESS": "Your vote has been successfully cast.",
+    "MY_POLLS": "My Polls",
+    "CREATE_NEW_POLL": "Create new poll"
   }
 }

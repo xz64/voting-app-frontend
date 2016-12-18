@@ -5,7 +5,7 @@ import getPoll from '../../Polls/actions/getPoll.js';
 import setCurrentPoll from '../../Polls/actions/setCurrentPoll.js';
 
 export default [
-  wentFactory('poll'),
+  ...wentFactory('poll'),
   set(state`polls.voteError`, null),
   getPoll, {
     success: [

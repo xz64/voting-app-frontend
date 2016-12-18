@@ -3,6 +3,7 @@ import wentRegister from './chains/wentRegister';
 import wentLogin from './chains/wentLogin';
 import wentLogout from './chains/wentLogout';
 import wentPoll from './chains/wentPoll';
+import wentMyPolls from './chains/wentMyPolls';
 
 export default {
   state: {
@@ -17,6 +18,7 @@ export default {
     wentRegister,
     wentLogin,
     wentLogout,
-    wentPoll
+    wentPoll,
+    wentMyPolls
   }
 };

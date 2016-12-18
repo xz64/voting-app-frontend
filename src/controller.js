@@ -42,7 +42,8 @@ const controller = Controller({
       '/register': 'app.wentRegister',
       '/login': 'app.wentLogin',
       '/logout': 'app.wentLogout',
-      '/polls/:id': 'app.wentPoll'
+      '/polls/:id': 'app.wentPoll',
+      '/myPolls': 'app.wentMyPolls'
     },
     onlyHash: true,
     preventAutostart: false,

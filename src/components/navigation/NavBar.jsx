@@ -11,6 +11,8 @@ const NavBar = ({ userID, currentRoute, t }) => (
   <div role='presentation' className='va-navbar-spacer'>
     <nav className='va-navbar'>
       <a className='va-navlink' href='/#/'>{t('HOME')}</a>
+      {userID ? (<a className='va-navlink' href='/#/myPolls'>
+        {t('MY_POLLS')}</a>) : null}
       <div className='va-spacer' role='presentation'/>
       {userID ? (<a className='va-navlink' href='/#/'>{userID}</a>) : null}
       {userID ?

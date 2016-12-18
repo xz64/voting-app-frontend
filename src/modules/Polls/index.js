@@ -8,7 +8,8 @@ export default {
     currentPoll: {},
     currentAnswer: null,
     voteError: null,
-    showVoteSuccess: false
+    showVoteSuccess: false,
+    myPolls: []
   },
   signals: {
     wentPoll,
