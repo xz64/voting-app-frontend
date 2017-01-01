@@ -6,6 +6,7 @@ import addedAnswer from './chains/addedAnswer.js';
 import removedAnswer from './chains/removedAnswer.js';
 import editedAnswer from './chains/editedAnswer.js';
 import uploadedPoll from './chains/uploadedPoll.js';
+import deletedPoll from './chains/deletedPoll.js';
 import { form } from 'cerebral-forms';
 
 export default {
@@ -45,6 +46,7 @@ export default {
     addedAnswer,
     removedAnswer,
     editedAnswer,
-    uploadedPoll
+    uploadedPoll,
+    deletedPoll
   }
 };
