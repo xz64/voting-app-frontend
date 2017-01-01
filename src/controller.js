@@ -43,7 +43,8 @@ const controller = Controller({
       '/login': 'app.wentLogin',
       '/logout': 'app.wentLogout',
       '/polls/:id': 'app.wentPoll',
-      '/myPolls': 'app.wentMyPolls'
+      '/myPolls': 'app.wentMyPolls',
+      '/createNewPoll': 'app.wentCreateNewPoll'
     },
     onlyHash: true,
     preventAutostart: false,

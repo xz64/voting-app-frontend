@@ -7,6 +7,7 @@ import RegisterScreen from '../register/RegisterScreen.jsx';
 import LoginScreen from '../login/LoginScreen.jsx';
 import PollScreen from '../polls/PollScreen.jsx';
 import MyPollsScreen from '../polls/MyPollsScreen.jsx';
+import PollCreateScreen from '../polls/PollCreateScreen.jsx';
 
 const stateProps = {
   route: 'app.currentRoute'
@@ -22,6 +23,8 @@ function getRouteView(route) {
     return PollScreen;
   case 'myPolls':
     return MyPollsScreen;
+  case 'createNewPoll':
+    return PollCreateScreen;
   default:
     return HomeScreen;
   }

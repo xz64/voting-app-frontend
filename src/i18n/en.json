@@ -19,6 +19,11 @@
     "S_ALREADY_VOTED": "You have already voted on this poll and may not vote on it again.",
     "VOTE_SUCCESS": "Your vote has been successfully cast.",
     "MY_POLLS": "My Polls",
-    "CREATE_NEW_POLL": "Create new poll"
+    "CREATE_NEW_POLL": "Create new poll",
+    "QUESTION": "Question",
+    "ANSWERS": "Answers",
+    "ADD": "Add",
+    "REMOVE": "Remove",
+    "CREATE_POLL": "Create Poll"
   }
 }
