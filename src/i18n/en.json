@@ -24,6 +24,7 @@
     "ANSWERS": "Answers",
     "ADD": "Add",
     "REMOVE": "Remove",
-    "CREATE_POLL": "Create Poll"
+    "CREATE_POLL": "Create Poll",
+    "UPDATE_POLL": "Update Poll (Resets vote counts)"
   }
 }

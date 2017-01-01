@@ -32,7 +32,8 @@ const stateProps = {
   form: 'polls.editingPoll',
   asyncError: 'polls.asyncError',
   submitting: 'polls.submitting',
-  answers: 'polls.editingPoll.answers.value'
+  answers: 'polls.editingPoll.answers.value',
+  pollId: 'polls.editingPollId'
 };
 
 const signalProps = {
@@ -44,12 +45,13 @@ const signalProps = {
 };
 
 const PollEditor = ({ onSubmit, answers, addedAnswer, removedAnswer,
-  onAnswerEdit, submitting, fieldChanged, form, asyncError, t }) => (
+  onAnswerEdit, submitting, fieldChanged, form, asyncError, pollId, t }) => (
   <div>
     <InputText
       label={t('QUESTION')}
       onChange={generateHandler(fieldChanged, 'polls.editingPoll.question')}
       field={form.question}
+      useValue={true}
     />
     <label>{t('ANSWERS')}</label>
     {generateAnswerErrorMessage(form.answers)}
@@ -62,7 +64,7 @@ const PollEditor = ({ onSubmit, answers, addedAnswer, removedAnswer,
       disabled={submitting || !customValidate(form)}
       onClick={wrapSubmit(onSubmit)}
     >
-      {t('CREATE_POLL')}
+      {pollId ? t('UPDATE_POLL') : t('CREATE_POLL')}
     </button>
   </div>
 );
@@ -77,7 +79,8 @@ PollEditor.propTypes = {
   asyncError: React.PropTypes.string,
   submitting: React.PropTypes.bool,
   t: React.PropTypes.func,
-  answers: React.PropTypes.array
+  answers: React.PropTypes.array,
+  pollId: React.PropTypes.string
 };
 
 export default connect(stateProps, signalProps, translate()(PollEditor));

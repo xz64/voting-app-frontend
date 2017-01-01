@@ -22,7 +22,8 @@ class TranslatableAnswerItem extends Component {
   render() {
     return (
       <div>
-        <input className='c-field' type='text' onChange={this._onChange}/>
+        <input value={this.props.answer} className='c-field' type='text'
+          onChange={this._onChange}/>
         {(this.props.index > 1) &&
             <button onClick={this._onRemove} className='c-button'>
               {this.props.t('REMOVE')}
@@ -36,7 +37,8 @@ TranslatableAnswerItem.propTypes = {
   onRemove: React.PropTypes.func,
   onChange: React.PropTypes.func,
   t: React.PropTypes.func,
-  index: React.PropTypes.number
+  index: React.PropTypes.number,
+  answer: React.PropTypes.string
 };
 
 const AnswerItem = translate()(TranslatableAnswerItem);

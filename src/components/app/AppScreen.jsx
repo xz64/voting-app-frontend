@@ -24,6 +24,7 @@ function getRouteView(route) {
   case 'myPolls':
     return MyPollsScreen;
   case 'createNewPoll':
+  case 'editPoll':
     return PollCreateScreen;
   default:
     return HomeScreen;

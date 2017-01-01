@@ -5,6 +5,7 @@ import wentLogout from './chains/wentLogout';
 import wentPoll from './chains/wentPoll';
 import wentMyPolls from './chains/wentMyPolls';
 import wentCreateNewPoll from './chains/wentCreateNewPoll';
+import wentEditPoll from './chains/wentEditPoll';
 
 export default {
   state: {
@@ -21,6 +22,7 @@ export default {
     wentLogout,
     wentPoll,
     wentMyPolls,
-    wentCreateNewPoll
+    wentCreateNewPoll,
+    wentEditPoll
   }
 };

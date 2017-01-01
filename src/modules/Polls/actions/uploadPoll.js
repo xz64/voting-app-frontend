@@ -3,7 +3,8 @@ function uploadPoll({ state, axios, path }) {
   var question = state.get('polls.editingPoll.question.value');
   var answers = state.get('polls.editingPoll.answers.value');
   var method = pollId ? axios.patch : axios.post;
-  return method('/polls', {
+  var endpoint = pollId ? `/polls/${pollId}` : '/polls';
+  return method(endpoint, {
     question,
     answers
   })
