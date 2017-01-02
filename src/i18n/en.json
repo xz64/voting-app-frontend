@@ -27,6 +27,7 @@
     "DELETE": "Delete",
     "CREATE_POLL": "Create Poll",
     "UPDATE_POLL": "Update Poll (Resets vote counts)",
-    "ANSWER": "Answer"
+    "ANSWER": "Answer",
+    "SHARE_POLL_TO_TWITTER": "Share on Twitter"
   }
 }

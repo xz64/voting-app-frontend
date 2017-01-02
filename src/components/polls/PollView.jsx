@@ -49,6 +49,12 @@ AnswerField.propTypes = {
   answer: React.PropTypes.object
 };
 
+function makeTwitterURL(poll) {
+  return 'https://twitter.com/intent/tweet'
+    + `?text=${window.encodeURIComponent(poll.question)}`
+    + `&url=${window.encodeURIComponent(window.location.href)}`;
+}
+
 const PollView = ({ poll, showVoteSuccess,
   onChoose, onVote, currentAnswer, voteError, t }) => (
   <div className='o-grid'>
@@ -66,6 +72,13 @@ const PollView = ({ poll, showVoteSuccess,
       {voteError && <div className='u-color-red'>{t('S_' + voteError)}</div>}
       {showVoteSuccess &&
         <div className='u-color-green'>{t('VOTE_SUCCESS')}</div>}
+        <a
+          href={makeTwitterURL(poll)}
+          target='_blank'
+          style={{display: 'block', marginTop: '10px'}}
+        >
+          {t('SHARE_POLL_TO_TWITTER')}
+        </a>
     </div>
   </div>
 );
