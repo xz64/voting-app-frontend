@@ -16,6 +16,15 @@ class TranslatablePollItem extends Component {
     this._onDelete = this._onDelete.bind(this);
   }
 
+  answerSummaryMap(answer, index) {
+    let { t } = this.props;
+    return (
+      <span key={index}>
+        {answer.voteCount} {t('VOTES')} {t('FOR')} "{answer.text}".{' '}
+      </span>
+    );
+  }
+
   _onDelete() {
     this.props.onDelete({ id: this.props.poll.id});
   }
@@ -28,7 +37,8 @@ class TranslatablePollItem extends Component {
           {poll.question}
         </a>
         {'\u00a0'}
-        <a href='/#/myPolls' onClick={this._onDelete}>{t('DELETE')}</a>
+        [<a href='/#/myPolls' onClick={this._onDelete}>{t('DELETE')}</a>]
+        {'('}{poll.answers.map(this.answerSummaryMap, this)}{')'}
       </li>
     );
   }
