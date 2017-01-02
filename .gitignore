@@ -34,3 +34,6 @@ node_modules
 
 # Build output
 dist
+
+# vim swap files
+*.swp
