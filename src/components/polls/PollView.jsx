@@ -2,6 +2,8 @@ import React from 'react';
 import { translate } from 'react-i18next';
 import { connect } from 'cerebral/react';
 
+import PollGraph from './PollGraph.jsx';
+
 const stateProps = {
   poll: 'polls.currentPoll',
   currentAnswer: 'polls.currentAnswer',
@@ -79,6 +81,9 @@ const PollView = ({ poll, showVoteSuccess,
         >
           {t('SHARE_POLL_TO_TWITTER')}
         </a>
+    </div>
+    <div className='o-grid__cell'>
+      <PollGraph poll={poll}/>
     </div>
   </div>
 );
