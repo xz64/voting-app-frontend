@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use(function (response) {
 });
 
 const controller = Controller({
-  devtools: process.env.NODE_ENV === 'production' ? () => {} : Devtools(),
+  devtools: process.env.NODE_ENV === 'production' && Devtools(),
   providers: [
     ContextProvider({ axios: axiosInstance })
   ],

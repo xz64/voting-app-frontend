@@ -38,7 +38,7 @@ config.plugins.push(
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': '"production"',
-      'RECAPTCHA_SITE_KEY': process.env.RECAPTCHA_SITE_KEY
+      'RECAPTCHA_SITE_KEY': JSON.stringify(process.env.RECAPTCHA_SITE_KEY)
     }
   }),
   new ExtractTextPlugin('styles.[contenthash].css'),
