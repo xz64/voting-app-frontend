@@ -6,10 +6,9 @@ const stateProps = {
   polls: 'polls.polls'
 };
 
-const PollDisplay = translate()(({ poll, key, t }) => (
+const PollDisplay = translate()(({ poll, key }) => (
   <li className='c-list__item' key={key}>
-    {poll.question}
-    <a href={'/#/polls/' + poll.id}>{t('VIEW')}</a>
+    <a href={'/#/polls/' + poll.id}>{poll.question}</a>
   </li>
 ));
 

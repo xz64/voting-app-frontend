@@ -59,6 +59,7 @@ const PollEditor = ({ onSubmit, answers, addedAnswer, removedAnswer,
       onChange={onAnswerEdit}/>
     {asyncError && <div className='c-field--error'>{asyncError}</div>}
     <button
+      style={{'marginTop': '10px'}}
       className='c-button c-button--block'
       type='button'
       disabled={submitting || !customValidate(form)}

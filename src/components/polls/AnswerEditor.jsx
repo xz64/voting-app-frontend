@@ -22,12 +22,20 @@ class TranslatableAnswerItem extends Component {
   render() {
     return (
       <div>
+        <label>{this.props.t('ANSWER') + ' #' + (this.props.index+1)}</label>
+        <div className='o-grid'>
+          <div className='o-grid__cell'>
         <input value={this.props.answer} className='c-field' type='text'
           onChange={this._onChange}/>
+      </div>
+            <div className='o-grid__cell'>
         {(this.props.index > 1) &&
-            <button onClick={this._onRemove} className='c-button'>
-              {this.props.t('REMOVE')}
-            </button>}
+          <button onClick={this._onRemove} className='c-button'>
+            {this.props.t('REMOVE')}
+          </button>
+        }
+        </div>
+      </div>
       </div>
     );
   }
@@ -46,13 +54,17 @@ const AnswerItem = translate()(TranslatableAnswerItem);
 function AnswerEditor({ t, answers, onRemove, onAdd, onChange }) {
   return (
     <div>
-      {answers.map((answer, i) =>
-        <AnswerItem
-          onRemove={onRemove} answer={answer} key={i} index={i}
-          onChange={onChange}
-        />
-      )}
-      <button className='c-button' onClick={() => onAdd()}>{t('ADD')}</button>
+      <div>
+        {answers.map((answer, i) =>
+          <AnswerItem
+            onRemove={onRemove} answer={answer} key={i} index={i}
+            onChange={onChange}
+          />
+        )}
+      </div>
+      <div style={{'marginTop': '10px'}}>
+        <button className='c-button' onClick={() => onAdd()}>{t('ADD')}</button>
+      </div>
     </div>
   );
 }

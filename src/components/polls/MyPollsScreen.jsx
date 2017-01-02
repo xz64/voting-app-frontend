@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
 import { connect } from 'cerebral/react';
 import { translate } from 'react-i18next';
 
