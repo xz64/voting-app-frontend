@@ -59,7 +59,7 @@ function makeTwitterURL(poll) {
 
 const PollView = ({ poll, showVoteSuccess,
   onChoose, onVote, currentAnswer, voteError, t }) => (
-  <div className='o-grid'>
+  <div className='o-grid o-grid--small-full o-grid--medium-full'>
     <div className='o-grid__cell'>
       {poll.question}
       <div>{t('SELECT_A_CHOICE')}</div>
