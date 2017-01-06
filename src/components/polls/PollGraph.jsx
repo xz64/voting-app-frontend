@@ -18,7 +18,7 @@ function PollGraph({ poll, t }) {
       {t('RESULTS')}
     <BarChart width={600} height={300} data={data}>
       <XAxis dataKey='name'/>
-      <YAxis/>
+      <YAxis interval={1}/>
       <CartesianGrid/>
       <Tooltip/>
       <Bar isAnimationActive={false} dataKey='Votes'/>
