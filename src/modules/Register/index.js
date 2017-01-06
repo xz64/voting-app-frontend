@@ -20,7 +20,7 @@ export default {
           'minLength:15',
           'equalsField:password'
         ],
-        errorMessages: [
+        validationMessages: [
           'Password must be at least 15 characters.',
           'Password must match repeat password.'
         ],
@@ -33,7 +33,7 @@ export default {
         validationRules: [
           'equalsField:password'
         ],
-        errorMessages: [
+        validationMessages: [
           'Password must match repeat password.'
         ],
         requiredMessage: 'Repeat password is required.',
